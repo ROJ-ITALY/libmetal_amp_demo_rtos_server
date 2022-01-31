@@ -50,7 +50,7 @@
 #define BUS_NAME        "generic"
 #define IPI_DEV_NAME    "ff310000.ipi"
 #define SHM_DEV_NAME    "3ed80000.shm"
-#define TTC_DEV_NAME    "ff110000.ttc"
+#define TTC_DEV_NAME    "ff120000.ttc"
 
 /* IPI registers offset */
 #define IPI_TRIG_OFFSET 0x0  /* IPI trigger reg offset */

@@ -54,7 +54,7 @@
  * Here is the Shared memory structure of this demo:
  * |0x0   - 0x03         | number of APU to RPU buffers available to RPU |
  * |0x04  - 0x1FFFFF     | address array for shared buffers from APU to RPU |
- * |0x200000 - 0x200004  | number of RPU to APU buffers available to APU |
+ * |0x200000 - 0x200003  | number of RPU to APU buffers available to APU |
  * |0x200004 - 0x3FFFFF  | address array for shared buffers from RPU to APU |
  * |0x400000 - 0x7FFFFF  | APU to RPU buffers |
  * |0x800000 - 0xAFFFFF  | RPU to APU buffers |
@@ -215,7 +215,7 @@ static int measure_shmem_throughputd(struct channel_s *ch)
 				SHM_DESC_ADDR_ARRAY_OFFSET;
 		rx_data_offset = SHM_DESC_OFFSET_RX + SHM_BUFF_OFFSET_RX;
 		wait_for_notified(&ch->remote_nkicked);
-		/* Data has arrived, seasure start. Reset RPU TTC counter */
+		/* Data has arrived, measure start. Reset RPU TTC counter */
 		reset_timer(ch->ttc_io, TTC_CNT_RPU_TO_APU);
 		while (1) {
 			rx_avail = metal_io_read32(ch->shm_io, rx_avail_offset);

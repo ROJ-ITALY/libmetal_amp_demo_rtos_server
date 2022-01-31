@@ -102,41 +102,41 @@ static void processing(void *unused_arg)
 		goto out;
 	}
 
-	ret = shmem_demod();
-	if (ret){
-		LPERROR("shared memory demo failed.\n");
-		goto out;
-	}
-
-	ret = atomic_shmem_demod();
-	if (ret){
-		LPERROR("shared memory atomic demo failed.\n");
-		goto out;
-	}
-
-	ret = ipi_shmem_demod();
-	if (ret){
-		LPERROR("shared memory atomic demo failed.\n");
-		goto out;
-	}
+//	ret = shmem_demod();
+//	if (ret){
+//		LPERROR("shared memory demo failed.\n");
+//		goto out;
+//	}
+//
+//	ret = atomic_shmem_demod();
+//	if (ret){
+//		LPERROR("shared memory atomic demo failed.\n");
+//		goto out;
+//	}
+//
+//	ret = ipi_shmem_demod();
+//	if (ret){
+//		LPERROR("shared memory atomic demo failed.\n");
+//		goto out;
+//	}
 
 	ret = ipi_latency_demod();
 	if (ret){
 		LPERROR("IPI latency demo failed.\n");
 		goto out;
 	}
-
-	ret = shmem_latency_demod();
-	if (ret){
-		LPERROR("shared memory latency demo failed.\n");
-		goto out;
-	}
-
-	ret = shmem_throughput_demod();
-	if (ret){
-		LPERROR("shared memory thoughput demo failed.\n");
-		goto out;
-	}
+//
+//	ret = shmem_latency_demod();
+//	if (ret){
+//		LPERROR("shared memory latency demo failed.\n");
+//		goto out;
+//	}
+//
+//	ret = shmem_throughput_demod();
+//	if (ret){
+//		LPERROR("shared memory thoughput demo failed.\n");
+//		goto out;
+//	}
 
 	sys_cleanup();
 

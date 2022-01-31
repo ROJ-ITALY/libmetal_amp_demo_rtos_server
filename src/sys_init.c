@@ -56,7 +56,7 @@
 #define IPI_IRQ_VECT_ID         65
 
 #define SHM_BASE_ADDR   0x3ED80000
-#define TTC0_BASE_ADDR  0xFF110000
+#define TTC1_BASE_ADDR  0xFF120000
 #define IPI_BASE_ADDR   0xFF310000
 
 /* Default generic I/O region page shift */
@@ -73,7 +73,7 @@ extern XScuGic xInterruptController;
 const metal_phys_addr_t metal_phys[] = {
 	IPI_BASE_ADDR, /**< base IPI address */
 	SHM_BASE_ADDR, /**< shared memory base address */
-	TTC0_BASE_ADDR, /**< base TTC0 address */
+	TTC1_BASE_ADDR, /**< base TTC1 address */
 };
 
 /* Define metal devices table for IPI, shared memory and TTC devices.
@@ -131,13 +131,13 @@ static struct metal_device metal_dev_table[] = {
 		.irq_info = NULL,
 	},
 	{
-		/* ttc0 */
+		/* ttc1 */
 		.name = TTC_DEV_NAME,
 		.bus = NULL,
 		.num_regions = 1,
 		.regions = {
 			{
-				.virt = (void *)TTC0_BASE_ADDR ,
+				.virt = (void *)TTC1_BASE_ADDR ,
 				.physmap = &metal_phys[2],
 				.size = 0x1000,
 				.page_shift = DEFAULT_PAGE_SHIFT,
