@@ -71,6 +71,8 @@ struct channel_s {
 	atomic_int remote_nkicked; /* 0 - kicked from remote */
 };
 
+static int ipi_irq_handler (int vect_id, void *priv) __attribute__ ((section(".isr")));
+
 /**
  * @brief reset_timer() - function to reset TTC counter
  *        Set the RST bit in the Count Control Reg.

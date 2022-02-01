@@ -274,6 +274,13 @@ SECTIONS
    __bss_end__ = .;
 } > psu_r5_ddr_0_MEM_0
 
+.isr : {
+   __isr_start = .;
+   *(.isr)
+   *(.isr.*)
+   __isr_end = .;
+} > psu_r5_atcm_MEM_0
+
 _SDA_BASE_ = __sdata_start + ((__sbss_end - __sdata_start) / 2 );
 
 _SDA2_BASE_ = __sdata2_start + ((__sbss2_end - __sdata2_start) / 2 );
